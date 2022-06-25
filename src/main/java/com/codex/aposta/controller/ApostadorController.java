@@ -1,8 +1,7 @@
 package com.codex.aposta.controller;
 
-import com.codex.aposta.model.Apostador;
 import com.codex.aposta.model.dto.ApostadorIn;
-import com.codex.aposta.repository.ApostadorRepository;
+import com.codex.aposta.service.ApostadorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +13,12 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequiredArgsConstructor
 public class ApostadorController {
 
-    private final ApostadorRepository apostadorRepository;
+    private final ApostadorService apostadorService;
 
     @PostMapping("/apostador")
     public ResponseEntity salvarApostador(@RequestBody ApostadorIn apostadorIn) {
 
-        Apostador apostador = apostadorIn.toConvert();
-        apostadorRepository.save(apostador);
+        apostadorService.salvaApostador(apostadorIn);
 
         return ResponseEntity.status(CREATED).build();
     }

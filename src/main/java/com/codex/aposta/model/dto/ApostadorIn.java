@@ -9,8 +9,4 @@ public class ApostadorIn {
     private String nome;
     private String email;
 
-    public Apostador toConvert(){
-
-        return new Apostador(null, nome, email);
-    }
 }
