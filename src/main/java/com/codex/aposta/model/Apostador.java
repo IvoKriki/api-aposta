@@ -1,4 +1,4 @@
-package com.codex.aposta;
+package com.codex.aposta.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
