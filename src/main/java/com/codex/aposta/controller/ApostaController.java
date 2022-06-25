@@ -8,9 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.validation.Valid;
-
 import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
@@ -20,8 +18,10 @@ public class ApostaController {
     private final ApostaService apostaService;
 
     @PostMapping("/aposta")
-    public ResponseEntity<ApostaOut> salvaAposta(@Valid @RequestBody ApostaIn apostaIn){
+    public ResponseEntity<ApostaOut> salvaAposta(@RequestBody ApostaIn apostaIn){
+
         ApostaOut apostaOut = apostaService.salvaAposta(apostaIn);
         return ResponseEntity.status(CREATED).body(apostaOut);
+
     }
 }

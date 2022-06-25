@@ -7,9 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.validation.Valid;
-
 import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
@@ -22,7 +20,7 @@ public class ApostadorController {
     public ResponseEntity salvarApostador(@Valid @RequestBody ApostadorIn apostadorIn) {
 
         apostadorService.salvaApostador(apostadorIn);
-
         return ResponseEntity.status(CREATED).build();
+
     }
 }
