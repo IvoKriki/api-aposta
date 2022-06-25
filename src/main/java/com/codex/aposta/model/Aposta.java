@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Getter
@@ -17,7 +18,7 @@ import javax.persistence.ManyToOne;
 public class Aposta {
 
     @Id
-    @NonNull
+    @NotBlank
     private String numeroAposta;
 
     @ManyToOne
