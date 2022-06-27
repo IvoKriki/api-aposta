@@ -36,5 +36,8 @@ build/
 # Default ignored files
 /shelf/
 /workspace.xml
+.mvn/*
+*.mvnw
+mvnw.cmd
 mvnw
 *.cmd
