@@ -12,10 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
@@ -46,5 +43,16 @@ public class ApostaService {
     }
 
     public List<ApostasOut> buscaApostadorPorIdApostador(Long idApostador) {
+
+        List<Aposta> apostaList = apostaRepository.findByIdApostador(idApostador);
+        List<ApostasOut> list = new ArrayList<>();
+
+        apostaList.forEach(apostas -> {
+            ApostasOut apostasOut = new ApostasOut();
+            apostasOut.setIdApostador(apostas.getApostador().getId());
+            apostasOut.setNumeroAposta(apostas.getNumeroAposta());
+            list.add(apostasOut);
+        });
+        return list;
     }
 }
