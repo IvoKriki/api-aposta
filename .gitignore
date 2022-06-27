@@ -41,3 +41,4 @@ build/
 mvnw.cmd
 mvnw
 *.cmd
+api-aposta/*
