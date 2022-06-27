@@ -37,8 +37,7 @@ build/
 /shelf/
 /workspace.xml
 .mvn/*
-*.mvnw
+mvnw/
 mvnw.cmd
 mvnw
 *.cmd
-api-aposta/*
